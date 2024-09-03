@@ -15,7 +15,7 @@ verify:
 	@while true; do \
 		inotifywait -e close_write ./src/**; \
 		clear; \
-		dafny verify ./src/*.dfy; \
+		dafny verify ./src/libs/*.dfy; \
 	done
 
 v1:
