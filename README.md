@@ -1,12 +1,12 @@
 Size Credit
 ============
-* [size](https://size.credit/) .
+* [size](https://size.credit/)
 
 
 ## Formally Verify the Binary Search Algo
 
 * [solidity](https://github.com/SizeCredit/size-solidity/blob/cdad422fa5e3146074e030a32e6f486699f0d5b2/src/libraries/Math.sol#L47)
-* [dafny](./dafny/src/libs/math.dfy)
+* [dafny](https://github.com/henry-hz/size-fv/blob/34cc66f0543c220d820cf2bae5d02fd761a1ec6c/dafny/src/libs/math.dfy#L146)
 
 
 ## Why Dafny
