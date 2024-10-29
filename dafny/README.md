@@ -1,4 +1,48 @@
+Using ChatGPT to find security vulnerabilities in Solidity smart contract protocols can be a powerful strategy, especially if combined with other security audit tools and techniques. Here's a step-by-step approach to maximize its potential:
 
+### 1. **Set Clear Parameters for Security Auditing**
+   - Begin by outlining the specific types of vulnerabilities you're targeting (e.g., reentrancy, integer overflow/underflow, gas limit issues, access control weaknesses).
+   - Provide the smart contract code or a section of the contract to ChatGPT with a clear question on potential vulnerabilities. Example: "Here’s a snippet of Solidity code—what security risks do you see?"
+
+### 2. **Exploit ChatGPT's Analytical Strengths**
+   - **Pattern Recognition**: Ask ChatGPT to review common patterns in the code that could lead to vulnerabilities.
+     - Example: "Does this function have any known attack vectors like reentrancy or gas limitations?"
+   - **Guided Audit**: You can guide ChatGPT by pointing out specific parts of the contract that are likely to be critical (e.g., withdrawal functions, token minting logic).
+     - Example: "How could an attacker exploit this withdrawal function?"
+
+### 3. **Use ChatGPT to Cross-Verify with Other Tools**
+   - After running automated audit tools like **Slither**, **MythX**, or **Oyente**, you can ask ChatGPT to interpret the results or look for overlooked issues.
+     - Example: "The tool flagged a potential reentrancy issue in this function, can you analyze it further and explain what could go wrong?"
+
+### 4. **Vulnerability Scenarios and Exploits**
+   - Create hypothetical attack scenarios based on the logic of the smart contract.
+     - Example: "If a user sends multiple transactions to this function in rapid succession, could they manipulate the contract's state or drain funds?"
+
+### 5. **Testing for Gas Efficiency and Logic Flaws**
+   - ChatGPT can help in identifying potential gas inefficiencies or logic flaws, which could result in DoS (Denial of Service) attacks.
+     - Example: "Can any loops or heavy operations in this contract run out of gas under certain conditions?"
+
+### 6. **Formal Verification Ideas**
+   - Although ChatGPT isn’t a formal verification tool, you can prompt it for potential formal verification methods or mathematical guarantees.
+     - Example: "What properties should be formally verified to ensure that this smart contract is safe from underflow and overflow?"
+
+### 7. **Security Best Practices Guidance**
+   - Ask for insights on general best practices that may not be followed in the smart contract.
+     - Example: "Are there any best practices missing in this smart contract to prevent security vulnerabilities?"
+
+### 8. **Peer Review Process**
+   - Use ChatGPT to assist in conducting a peer review of the code or the findings of other security auditors.
+     - Example: "Here’s a report from an audit. Can you suggest any areas that might require further scrutiny?"
+
+### 9. **Education and Awareness**
+   - Leverage ChatGPT to explain complex vulnerabilities to less experienced team members or to create educational resources.
+     - Example: "Explain how a reentrancy attack works in simple terms using the code provided."
+
+### 10. **Create Testing Scenarios**
+   - Ask ChatGPT to suggest unit tests, fuzz tests, and static analysis tests to identify issues.
+     - Example: "Can you generate test cases to stress-test this smart contract for potential edge cases?"
+
+This strategy combines ChatGPT's ability to reason about code, explain vulnerabilities, and suggest tests with other manual and automated security audit tools to ensure a thorough review of your Solidity smart contract protocol.
 
 
 ## Numbers
@@ -127,4 +171,5 @@ An assertion says that a particular expression always holds when control reaches
 * make algos on `learn-logic`
 * study the pdfs
 * translate certora stuff to dafny  [compound, open zeppelin, etc..]
+* https://towardsdatascience.com/nine-rules-to-formally-validate-rust-algorithms-with-dafny-part-1-5cb8c8a0bb92
 

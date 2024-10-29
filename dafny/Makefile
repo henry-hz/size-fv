@@ -1,7 +1,5 @@
 
-
-clean:
-	rm -rf out/*
+.PHONY: watch run clean
 
 ver:
 	@while true; do \
@@ -23,7 +21,7 @@ v1:
 
 # compile src files to out folder
 compile:
-	while inotifywait -e close_write ./*; do clear; dafny ./src/hello.dfy /out:./out/hello; done
+	while inotifywait -e close_write ./*; do clear; dafny build ./src/main.dfy -o ./out/main.dll; done
 
 
 build:
@@ -32,5 +30,19 @@ build:
 test:
 	dafny test ${f} -o ./out/${f}
 
+
+
+watch:
+	while inotifywait -e close_write ./src/*.dfy; do clear; $(MAKE) run; done
+
+
 run:
-	./out/hello.exe
+	@echo "[INFO] $(shell date '+%Y-%m-%d %H:%M:%S') Running Dafny file..."
+	@dafny run --no-verify ./src/libs/math.dfy
+	@$(MAKE) clean
+
+clean:
+	@echo "[INFO] $(shell date '+%Y-%m-%d %H:%M:%S') Cleaning up..."
+	@rm -f ./src/*.dll ./src/*.runtimeconfig.json
+	@rm -f ./src/*/*.dll ./src/*/*.runtimeconfig.json
+	@echo "[INFO] $(shell date '+%Y-%m-%d %H:%M:%S') Cleanup complete."
