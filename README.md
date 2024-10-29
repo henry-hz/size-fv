@@ -2,6 +2,15 @@ Size Credit
 ============
 * [size](https://size.credit/) .
 
+
+## Formally Verify the Binary Search Algo
+
+* [solidity](https://github.com/SizeCredit/size-solidity/blob/cdad422fa5e3146074e030a32e6f486699f0d5b2/src/libraries/Math.sol#L47)
+* [dafny](./dafny/src/libs/math.dfy)
+
+
+## Why Dafny
+
 Dafny to fully verify DeFi protocols.
 
 1. **Mathematical Correctness**: Dafny verifies code mathematically, essential for error-free smart contracts in Web3.
